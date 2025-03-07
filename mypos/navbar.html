@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background: #FF8C00; /* Dark Orange Header */
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color:#159804;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block; /* Ensure box wraps around text */
+            background-color: rgba(245, 62, 6, 0.1); /* Light background color */
+        }
+
+        nav ul li a:hover {
+            color: #0c0c0c;
+            background-color: #f53e06; /* Background on hover */
+            box-shadow: 0 0 15px rgba(245, 62, 6, 0.7); /* Stronger shadow on hover */
+            transform: scale(1.1); /* Subtle zoom effect */
+        }
+
+        .logout-btn {
+            background: red;
+            text-align: center;
+            color: white;
+            width: 18%;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            position: absolute;
+            right: -60px;
+            top: 5px;
+        }
+
+        .logout-btn:hover {
+            background: #f77218;
+            transform: scale(0.9);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: row;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <nav>
+        <ul>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="fetch_order.php">Orders</a></li>
+            <li><a href="inventory.php">Inventory</a></li>
+        </ul>
+        <button class="logout-btn" onclick="confirmLogout()">Logout</button>
+    </nav>
+</div>
+
+<script>
+    function confirmLogout() {
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "index.html";
+        }
+    }
+</script>
+
+</body><br><br>
+</html>
